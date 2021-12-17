@@ -1,0 +1,512 @@
+loading data ... ...
+        time_in_hospital  num_lab_procedures  num_medications  number_outpatient  number_emergency  ...  change_Ch  change_No  diabetesMed_No  diabetesMed_Yes  readmitted
+0              -1.137649           -0.106517        -1.848268          -0.291461          -0.21262  ...  -0.926591   0.926591        1.829868        -1.829868           0
+1              -0.467653            0.808384         0.243390          -0.291461          -0.21262  ...   1.079225  -1.079225       -0.546488         0.546488           1
+2              -0.802651           -1.631351        -0.371804           1.286748          -0.21262  ...  -0.926591   0.926591       -0.546488         0.546488           0
+3              -0.802651            0.045967        -0.002688          -0.291461          -0.21262  ...   1.079225  -1.079225       -0.546488         0.546488           0
+4              -1.137649            0.401761        -0.986997          -0.291461          -0.21262  ...   1.079225  -1.079225       -0.546488         0.546488           0
+...                  ...                 ...              ...                ...               ...  ...        ...        ...             ...              ...         ...
+101761         -0.467653            0.401761        -0.002688          -0.291461          -0.21262  ...   1.079225  -1.079225       -0.546488         0.546488           1
+101762          0.202343           -0.513139         0.243390          -0.291461          -0.21262  ...  -0.926591   0.926591       -0.546488         0.546488           0
+101763         -1.137649            0.503417        -0.863958           0.497643          -0.21262  ...   1.079225  -1.079225       -0.546488         0.546488           0
+101764          1.877333            0.096794         0.612506          -0.291461          -0.21262  ...   1.079225  -1.079225       -0.546488         0.546488           0
+101765          0.537341           -1.529696        -1.602190          -0.291461          -0.21262  ...  -0.926591   0.926591        1.829868        -1.829868           0
+
+[101766 rows x 2362 columns]
+Index(['NO', 'YES'], dtype='object')
+Dataset split shapes:  (61059, 2361) (61059,) (40707, 2361) (40707,)
+creating pytorch dataset object ... ...
+initializing neural net ... ...
+Net(
+  (classifier): Sequential(
+    (0): Linear(in_features=2361, out_features=1600, bias=True)
+    (1): BatchNorm1d(1600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): ReLU()
+    (4): Linear(in_features=1600, out_features=800, bias=True)
+    (5): BatchNorm1d(800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Dropout(p=0.5, inplace=False)
+    (7): ReLU()
+    (8): Linear(in_features=800, out_features=400, bias=True)
+    (9): BatchNorm1d(400, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): Dropout(p=0.5, inplace=False)
+    (11): ReLU()
+    (12): Linear(in_features=400, out_features=100, bias=True)
+    (13): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (14): Dropout(p=0.5, inplace=False)
+    (15): ReLU()
+    (16): Linear(in_features=100, out_features=32, bias=True)
+    (17): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (18): ReLU()
+    (19): Linear(in_features=32, out_features=2, bias=True)
+  )
+)
+22
+torch.Size([1600, 2361])
+torch.Size([1600])
+torch.Size([1600])
+torch.Size([1600])
+torch.Size([800, 1600])
+torch.Size([800])
+torch.Size([800])
+torch.Size([800])
+torch.Size([400, 800])
+torch.Size([400])
+torch.Size([400])
+torch.Size([400])
+torch.Size([100, 400])
+torch.Size([100])
+torch.Size([100])
+torch.Size([100])
+torch.Size([32, 100])
+torch.Size([32])
+torch.Size([32])
+torch.Size([32])
+torch.Size([2, 32])
+torch.Size([2])
+training ... ...
+epoch: 1
+I: 50, loss: 0.00703
+I 50, correct: 2581, total: 5000, accuracy: 0.51620
+I: 100, loss: 0.00699
+I 100, correct: 5247, total: 10000, accuracy: 0.52470
+I: 150, loss: 0.00697
+I 150, correct: 7910, total: 15000, accuracy: 0.52733
+I: 200, loss: 0.00696
+I 200, correct: 10556, total: 20000, accuracy: 0.52780
+I: 250, loss: 0.00694
+I 250, correct: 13266, total: 25000, accuracy: 0.53064
+I: 300, loss: 0.00694
+I 300, correct: 15951, total: 30000, accuracy: 0.53170
+I: 350, loss: 0.00693
+I 350, correct: 18588, total: 35000, accuracy: 0.53109
+I: 400, loss: 0.00693
+I 400, correct: 21237, total: 40000, accuracy: 0.53092
+I: 450, loss: 0.00693
+I 450, correct: 23917, total: 45000, accuracy: 0.53149
+I: 500, loss: 0.00692
+I 500, correct: 26596, total: 50000, accuracy: 0.53192
+I: 550, loss: 0.00692
+I 550, correct: 29300, total: 55000, accuracy: 0.53273
+I: 600, loss: 0.00692
+I 600, correct: 32079, total: 60000, accuracy: 0.53465
+avg epoch loss: 0.00691
+Accuracy on test data: 53.47705 %
+[0.006907662637371297]
+[53.47704918032787]
+epoch: 2
+I: 50, loss: 0.00685
+I 50, correct: 2794, total: 5000, accuracy: 0.55880
+I: 100, loss: 0.00683
+I 100, correct: 5637, total: 10000, accuracy: 0.56370
+I: 150, loss: 0.00682
+I 150, correct: 8486, total: 15000, accuracy: 0.56573
+I: 200, loss: 0.00680
+I 200, correct: 11375, total: 20000, accuracy: 0.56875
+I: 250, loss: 0.00679
+I 250, correct: 14276, total: 25000, accuracy: 0.57104
+I: 300, loss: 0.00677
+I 300, correct: 17255, total: 30000, accuracy: 0.57517
+I: 350, loss: 0.00676
+I 350, correct: 20207, total: 35000, accuracy: 0.57734
+I: 400, loss: 0.00675
+I 400, correct: 23178, total: 40000, accuracy: 0.57945
+I: 450, loss: 0.00674
+I 450, correct: 26135, total: 45000, accuracy: 0.58078
+I: 500, loss: 0.00673
+I 500, correct: 29161, total: 50000, accuracy: 0.58322
+I: 550, loss: 0.00672
+I 550, correct: 32141, total: 55000, accuracy: 0.58438
+I: 600, loss: 0.00671
+I 600, correct: 35168, total: 60000, accuracy: 0.58613
+avg epoch loss: 0.00670
+Accuracy on test data: 58.66393 %
+[0.006907662637371297, 0.006704871272120818]
+[53.47704918032787, 58.66393442622951]
+epoch: 3
+I: 50, loss: 0.00655
+I 50, correct: 3084, total: 5000, accuracy: 0.61680
+I: 100, loss: 0.00652
+I 100, correct: 6175, total: 10000, accuracy: 0.61750
+I: 150, loss: 0.00651
+I 150, correct: 9281, total: 15000, accuracy: 0.61873
+I: 200, loss: 0.00652
+I 200, correct: 12352, total: 20000, accuracy: 0.61760
+I: 250, loss: 0.00651
+I 250, correct: 15508, total: 25000, accuracy: 0.62032
+I: 300, loss: 0.00652
+I 300, correct: 18586, total: 30000, accuracy: 0.61953
+I: 350, loss: 0.00653
+I 350, correct: 21578, total: 35000, accuracy: 0.61651
+I: 400, loss: 0.00653
+I 400, correct: 24709, total: 40000, accuracy: 0.61772
+I: 450, loss: 0.00652
+I 450, correct: 27833, total: 45000, accuracy: 0.61851
+I: 500, loss: 0.00653
+I 500, correct: 30904, total: 50000, accuracy: 0.61808
+I: 550, loss: 0.00653
+I 550, correct: 33999, total: 55000, accuracy: 0.61816
+I: 600, loss: 0.00653
+I 600, correct: 37118, total: 60000, accuracy: 0.61863
+avg epoch loss: 0.00652
+Accuracy on test data: 61.88852 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975]
+[53.47704918032787, 58.66393442622951, 61.88852459016393]
+epoch: 4
+I: 50, loss: 0.00632
+I 50, correct: 3252, total: 5000, accuracy: 0.65040
+I: 100, loss: 0.00637
+I 100, correct: 6410, total: 10000, accuracy: 0.64100
+I: 150, loss: 0.00640
+I 150, correct: 9560, total: 15000, accuracy: 0.63733
+I: 200, loss: 0.00641
+I 200, correct: 12689, total: 20000, accuracy: 0.63445
+I: 250, loss: 0.00640
+I 250, correct: 15865, total: 25000, accuracy: 0.63460
+I: 300, loss: 0.00641
+I 300, correct: 19001, total: 30000, accuracy: 0.63337
+I: 350, loss: 0.00642
+I 350, correct: 22148, total: 35000, accuracy: 0.63280
+I: 400, loss: 0.00642
+I 400, correct: 25294, total: 40000, accuracy: 0.63235
+I: 450, loss: 0.00641
+I 450, correct: 28477, total: 45000, accuracy: 0.63282
+I: 500, loss: 0.00641
+I 500, correct: 31665, total: 50000, accuracy: 0.63330
+I: 550, loss: 0.00642
+I 550, correct: 34825, total: 55000, accuracy: 0.63318
+I: 600, loss: 0.00642
+I 600, correct: 37959, total: 60000, accuracy: 0.63265
+avg epoch loss: 0.00642
+Accuracy on test data: 63.25574 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803]
+epoch: 5
+I: 50, loss: 0.00620
+I 50, correct: 3286, total: 5000, accuracy: 0.65720
+I: 100, loss: 0.00623
+I 100, correct: 6529, total: 10000, accuracy: 0.65290
+I: 150, loss: 0.00624
+I 150, correct: 9770, total: 15000, accuracy: 0.65133
+I: 200, loss: 0.00628
+I 200, correct: 12941, total: 20000, accuracy: 0.64705
+I: 250, loss: 0.00629
+I 250, correct: 16156, total: 25000, accuracy: 0.64624
+I: 300, loss: 0.00629
+I 300, correct: 19400, total: 30000, accuracy: 0.64667
+I: 350, loss: 0.00630
+I 350, correct: 22617, total: 35000, accuracy: 0.64620
+I: 400, loss: 0.00631
+I 400, correct: 25805, total: 40000, accuracy: 0.64512
+I: 450, loss: 0.00631
+I 450, correct: 28998, total: 45000, accuracy: 0.64440
+I: 500, loss: 0.00631
+I 500, correct: 32201, total: 50000, accuracy: 0.64402
+I: 550, loss: 0.00632
+I 550, correct: 35410, total: 55000, accuracy: 0.64382
+I: 600, loss: 0.00632
+I 600, correct: 38635, total: 60000, accuracy: 0.64392
+avg epoch loss: 0.00631
+Accuracy on test data: 64.39180 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853]
+epoch: 6
+I: 50, loss: 0.00614
+I 50, correct: 3268, total: 5000, accuracy: 0.65360
+I: 100, loss: 0.00617
+I 100, correct: 6549, total: 10000, accuracy: 0.65490
+I: 150, loss: 0.00618
+I 150, correct: 9791, total: 15000, accuracy: 0.65273
+I: 200, loss: 0.00620
+I 200, correct: 13007, total: 20000, accuracy: 0.65035
+I: 250, loss: 0.00622
+I 250, correct: 16251, total: 25000, accuracy: 0.65004
+I: 300, loss: 0.00623
+I 300, correct: 19464, total: 30000, accuracy: 0.64880
+I: 350, loss: 0.00623
+I 350, correct: 22667, total: 35000, accuracy: 0.64763
+I: 400, loss: 0.00624
+I 400, correct: 25922, total: 40000, accuracy: 0.64805
+I: 450, loss: 0.00624
+I 450, correct: 29190, total: 45000, accuracy: 0.64867
+I: 500, loss: 0.00624
+I 500, correct: 32458, total: 50000, accuracy: 0.64916
+I: 550, loss: 0.00625
+I 550, correct: 35667, total: 55000, accuracy: 0.64849
+I: 600, loss: 0.00626
+I 600, correct: 38897, total: 60000, accuracy: 0.64828
+avg epoch loss: 0.00625
+Accuracy on test data: 64.80328 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459]
+epoch: 7
+I: 50, loss: 0.00616
+I 50, correct: 3312, total: 5000, accuracy: 0.66240
+I: 100, loss: 0.00613
+I 100, correct: 6611, total: 10000, accuracy: 0.66110
+I: 150, loss: 0.00614
+I 150, correct: 9932, total: 15000, accuracy: 0.66213
+I: 200, loss: 0.00613
+I 200, correct: 13256, total: 20000, accuracy: 0.66280
+I: 250, loss: 0.00614
+I 250, correct: 16575, total: 25000, accuracy: 0.66300
+I: 300, loss: 0.00616
+I 300, correct: 19858, total: 30000, accuracy: 0.66193
+I: 350, loss: 0.00615
+I 350, correct: 23195, total: 35000, accuracy: 0.66271
+I: 400, loss: 0.00615
+I 400, correct: 26505, total: 40000, accuracy: 0.66263
+I: 450, loss: 0.00617
+I 450, correct: 29699, total: 45000, accuracy: 0.65998
+I: 500, loss: 0.00618
+I 500, correct: 32957, total: 50000, accuracy: 0.65914
+I: 550, loss: 0.00619
+I 550, correct: 36224, total: 55000, accuracy: 0.65862
+I: 600, loss: 0.00619
+I 600, correct: 39489, total: 60000, accuracy: 0.65815
+avg epoch loss: 0.00619
+Accuracy on test data: 65.77049 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869]
+epoch: 8
+I: 50, loss: 0.00600
+I 50, correct: 3373, total: 5000, accuracy: 0.67460
+I: 100, loss: 0.00603
+I 100, correct: 6716, total: 10000, accuracy: 0.67160
+I: 150, loss: 0.00605
+I 150, correct: 10048, total: 15000, accuracy: 0.66987
+I: 200, loss: 0.00605
+I 200, correct: 13387, total: 20000, accuracy: 0.66935
+I: 250, loss: 0.00606
+I 250, correct: 16691, total: 25000, accuracy: 0.66764
+I: 300, loss: 0.00606
+I 300, correct: 20038, total: 30000, accuracy: 0.66793
+I: 350, loss: 0.00608
+I 350, correct: 23308, total: 35000, accuracy: 0.66594
+I: 400, loss: 0.00610
+I 400, correct: 26609, total: 40000, accuracy: 0.66522
+I: 450, loss: 0.00610
+I 450, correct: 29943, total: 45000, accuracy: 0.66540
+I: 500, loss: 0.00611
+I 500, correct: 33227, total: 50000, accuracy: 0.66454
+I: 550, loss: 0.00612
+I 550, correct: 36545, total: 55000, accuracy: 0.66445
+I: 600, loss: 0.00613
+I 600, correct: 39780, total: 60000, accuracy: 0.66300
+avg epoch loss: 0.00612
+Accuracy on test data: 66.24426 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197]
+epoch: 9
+I: 50, loss: 0.00591
+I 50, correct: 3413, total: 5000, accuracy: 0.68260
+I: 100, loss: 0.00596
+I 100, correct: 6751, total: 10000, accuracy: 0.67510
+I: 150, loss: 0.00597
+I 150, correct: 10119, total: 15000, accuracy: 0.67460
+I: 200, loss: 0.00602
+I 200, correct: 13435, total: 20000, accuracy: 0.67175
+I: 250, loss: 0.00604
+I 250, correct: 16755, total: 25000, accuracy: 0.67020
+I: 300, loss: 0.00604
+I 300, correct: 20097, total: 30000, accuracy: 0.66990
+I: 350, loss: 0.00605
+I 350, correct: 23407, total: 35000, accuracy: 0.66877
+I: 400, loss: 0.00606
+I 400, correct: 26732, total: 40000, accuracy: 0.66830
+I: 450, loss: 0.00606
+I 450, correct: 30017, total: 45000, accuracy: 0.66704
+I: 500, loss: 0.00607
+I 500, correct: 33300, total: 50000, accuracy: 0.66600
+I: 550, loss: 0.00607
+I 550, correct: 36620, total: 55000, accuracy: 0.66582
+I: 600, loss: 0.00607
+I 600, correct: 39967, total: 60000, accuracy: 0.66612
+avg epoch loss: 0.00607
+Accuracy on test data: 66.60984 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762, 0.006069253399880535]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197, 66.60983606557377]
+epoch: 10
+I: 50, loss: 0.00587
+I 50, correct: 3472, total: 5000, accuracy: 0.69440
+I: 100, loss: 0.00589
+I 100, correct: 6892, total: 10000, accuracy: 0.68920
+I: 150, loss: 0.00595
+I 150, correct: 10190, total: 15000, accuracy: 0.67933
+I: 200, loss: 0.00595
+I 200, correct: 13550, total: 20000, accuracy: 0.67750
+I: 250, loss: 0.00595
+I 250, correct: 16974, total: 25000, accuracy: 0.67896
+I: 300, loss: 0.00597
+I 300, correct: 20333, total: 30000, accuracy: 0.67777
+I: 350, loss: 0.00598
+I 350, correct: 23675, total: 35000, accuracy: 0.67643
+I: 400, loss: 0.00598
+I 400, correct: 27034, total: 40000, accuracy: 0.67585
+I: 450, loss: 0.00599
+I 450, correct: 30403, total: 45000, accuracy: 0.67562
+I: 500, loss: 0.00600
+I 500, correct: 33722, total: 50000, accuracy: 0.67444
+I: 550, loss: 0.00601
+I 550, correct: 37080, total: 55000, accuracy: 0.67418
+I: 600, loss: 0.00602
+I 600, correct: 40410, total: 60000, accuracy: 0.67350
+avg epoch loss: 0.00601
+Accuracy on test data: 67.36721 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762, 0.006069253399880535, 0.00601011382732814]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197, 66.60983606557377, 67.3672131147541]
+epoch: 11
+I: 50, loss: 0.00578
+I 50, correct: 3476, total: 5000, accuracy: 0.69520
+I: 100, loss: 0.00582
+I 100, correct: 6894, total: 10000, accuracy: 0.68940
+I: 150, loss: 0.00582
+I 150, correct: 10338, total: 15000, accuracy: 0.68920
+I: 200, loss: 0.00585
+I 200, correct: 13720, total: 20000, accuracy: 0.68600
+I: 250, loss: 0.00588
+I 250, correct: 17083, total: 25000, accuracy: 0.68332
+I: 300, loss: 0.00590
+I 300, correct: 20457, total: 30000, accuracy: 0.68190
+I: 350, loss: 0.00591
+I 350, correct: 23826, total: 35000, accuracy: 0.68074
+I: 400, loss: 0.00592
+I 400, correct: 27180, total: 40000, accuracy: 0.67950
+I: 450, loss: 0.00592
+I 450, correct: 30563, total: 45000, accuracy: 0.67918
+I: 500, loss: 0.00594
+I 500, correct: 33899, total: 50000, accuracy: 0.67798
+I: 550, loss: 0.00594
+I 550, correct: 37281, total: 55000, accuracy: 0.67784
+I: 600, loss: 0.00595
+I 600, correct: 40597, total: 60000, accuracy: 0.67662
+avg epoch loss: 0.00595
+Accuracy on test data: 67.65574 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762, 0.006069253399880535, 0.00601011382732814, 0.005948434860574857]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197, 66.60983606557377, 67.3672131147541, 67.65573770491804]
+epoch: 12
+I: 50, loss: 0.00572
+I 50, correct: 3481, total: 5000, accuracy: 0.69620
+I: 100, loss: 0.00574
+I 100, correct: 6955, total: 10000, accuracy: 0.69550
+I: 150, loss: 0.00576
+I 150, correct: 10418, total: 15000, accuracy: 0.69453
+I: 200, loss: 0.00577
+I 200, correct: 13876, total: 20000, accuracy: 0.69380
+I: 250, loss: 0.00579
+I 250, correct: 17334, total: 25000, accuracy: 0.69336
+I: 300, loss: 0.00582
+I 300, correct: 20722, total: 30000, accuracy: 0.69073
+I: 350, loss: 0.00585
+I 350, correct: 24077, total: 35000, accuracy: 0.68791
+I: 400, loss: 0.00587
+I 400, correct: 27405, total: 40000, accuracy: 0.68512
+I: 450, loss: 0.00589
+I 450, correct: 30749, total: 45000, accuracy: 0.68331
+I: 500, loss: 0.00589
+I 500, correct: 34140, total: 50000, accuracy: 0.68280
+I: 550, loss: 0.00590
+I 550, correct: 37562, total: 55000, accuracy: 0.68295
+I: 600, loss: 0.00590
+I 600, correct: 40940, total: 60000, accuracy: 0.68233
+avg epoch loss: 0.00589
+Accuracy on test data: 68.24918 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762, 0.006069253399880535, 0.00601011382732814, 0.005948434860574857, 0.00589396102391849]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197, 66.60983606557377, 67.3672131147541, 67.65573770491804, 68.24918032786886]
+epoch: 13
+I: 50, loss: 0.00573
+I 50, correct: 3496, total: 5000, accuracy: 0.69920
+I: 100, loss: 0.00579
+I 100, correct: 6904, total: 10000, accuracy: 0.69040
+I: 150, loss: 0.00576
+I 150, correct: 10441, total: 15000, accuracy: 0.69607
+I: 200, loss: 0.00574
+I 200, correct: 13928, total: 20000, accuracy: 0.69640
+I: 250, loss: 0.00576
+I 250, correct: 17356, total: 25000, accuracy: 0.69424
+I: 300, loss: 0.00578
+I 300, correct: 20795, total: 30000, accuracy: 0.69317
+I: 350, loss: 0.00579
+I 350, correct: 24197, total: 35000, accuracy: 0.69134
+I: 400, loss: 0.00580
+I 400, correct: 27644, total: 40000, accuracy: 0.69110
+I: 450, loss: 0.00581
+I 450, correct: 31062, total: 45000, accuracy: 0.69027
+I: 500, loss: 0.00583
+I 500, correct: 34439, total: 50000, accuracy: 0.68878
+I: 550, loss: 0.00583
+I 550, correct: 37883, total: 55000, accuracy: 0.68878
+I: 600, loss: 0.00583
+I 600, correct: 41360, total: 60000, accuracy: 0.68933
+avg epoch loss: 0.00582
+Accuracy on test data: 68.89672 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762, 0.006069253399880535, 0.00601011382732814, 0.005948434860574857, 0.00589396102391849, 0.0058226906376069]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197, 66.60983606557377, 67.3672131147541, 67.65573770491804, 68.24918032786886, 68.8967213114754]
+epoch: 14
+I: 50, loss: 0.00556
+I 50, correct: 3597, total: 5000, accuracy: 0.71940
+I: 100, loss: 0.00562
+I 100, correct: 7105, total: 10000, accuracy: 0.71050
+I: 150, loss: 0.00564
+I 150, correct: 10609, total: 15000, accuracy: 0.70727
+I: 200, loss: 0.00568
+I 200, correct: 14099, total: 20000, accuracy: 0.70495
+I: 250, loss: 0.00570
+I 250, correct: 17554, total: 25000, accuracy: 0.70216
+I: 300, loss: 0.00571
+I 300, correct: 20979, total: 30000, accuracy: 0.69930
+I: 350, loss: 0.00571
+I 350, correct: 24438, total: 35000, accuracy: 0.69823
+I: 400, loss: 0.00572
+I 400, correct: 27909, total: 40000, accuracy: 0.69773
+I: 450, loss: 0.00573
+I 450, correct: 31363, total: 45000, accuracy: 0.69696
+I: 500, loss: 0.00575
+I 500, correct: 34786, total: 50000, accuracy: 0.69572
+I: 550, loss: 0.00576
+I 550, correct: 38220, total: 55000, accuracy: 0.69491
+I: 600, loss: 0.00577
+I 600, correct: 41631, total: 60000, accuracy: 0.69385
+avg epoch loss: 0.00576
+Accuracy on test data: 69.38197 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762, 0.006069253399880535, 0.00601011382732814, 0.005948434860574857, 0.00589396102391849, 0.0058226906376069, 0.005761575534073161]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197, 66.60983606557377, 67.3672131147541, 67.65573770491804, 68.24918032786886, 68.8967213114754, 69.38196721311475]
+epoch: 15
+I: 50, loss: 0.00553
+I 50, correct: 3575, total: 5000, accuracy: 0.71500
+I: 100, loss: 0.00557
+I 100, correct: 7130, total: 10000, accuracy: 0.71300
+I: 150, loss: 0.00556
+I 150, correct: 10684, total: 15000, accuracy: 0.71227
+I: 200, loss: 0.00559
+I 200, correct: 14172, total: 20000, accuracy: 0.70860
+I: 250, loss: 0.00560
+I 250, correct: 17685, total: 25000, accuracy: 0.70740
+I: 300, loss: 0.00562
+I 300, correct: 21164, total: 30000, accuracy: 0.70547
+I: 350, loss: 0.00565
+I 350, correct: 24646, total: 35000, accuracy: 0.70417
+I: 400, loss: 0.00566
+I 400, correct: 28093, total: 40000, accuracy: 0.70232
+I: 450, loss: 0.00567
+I 450, correct: 31579, total: 45000, accuracy: 0.70176
+I: 500, loss: 0.00568
+I 500, correct: 35049, total: 50000, accuracy: 0.70098
+I: 550, loss: 0.00568
+I 550, correct: 38573, total: 55000, accuracy: 0.70133
+I: 600, loss: 0.00569
+I 600, correct: 42028, total: 60000, accuracy: 0.70047
+avg epoch loss: 0.00569
+Accuracy on test data: 70.01803 %
+[0.006907662637371297, 0.006704871272120818, 0.006518132040304975, 0.006416474994450818, 0.0063117602876215165, 0.006251813370306947, 0.0061853049830668475, 0.006124951039212762, 0.006069253399880535, 0.00601011382732814, 0.005948434860574857, 0.00589396102391849, 0.0058226906376069, 0.005761575534073161, 0.005686538738760752]
+[53.47704918032787, 58.66393442622951, 61.88852459016393, 63.25573770491803, 64.39180327868853, 64.80327868852459, 65.77049180327869, 66.24426229508197, 66.60983606557377, 67.3672131147541, 67.65573770491804, 68.24918032786886, 68.8967213114754, 69.38196721311475, 70.01803278688524]
+testing ... ...
+I 50, correct: 3096, total: 5000
+I 100, correct: 6163, total: 10000
+I 150, correct: 9256, total: 15000
+I 200, correct: 12305, total: 20000
+I 250, correct: 15328, total: 25000
+I 300, correct: 18394, total: 30000
+I 350, correct: 21443, total: 35000
+I 400, correct: 24508, total: 40000
+Accuracy on test data: 61 %
